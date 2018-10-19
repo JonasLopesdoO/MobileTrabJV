@@ -10,7 +10,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:orientation="vertical"
-        tools:context=".InicialActivity">
+        tools:context=".Activity.MainActivity">
 
     <TextView
             android:id="@+id/txtTitulo"
@@ -33,7 +33,7 @@
             android:text="Logar"/>
 
     <Button
-            android:id="@+id/btnCadastrar"
+            android:id="@+id/btnFazerCadastro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Cadastrar"/>
