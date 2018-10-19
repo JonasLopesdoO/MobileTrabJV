@@ -27,5 +27,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intentAbrirTelaLogin);
             }
         });
+
+        btnAbrirActivityCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentAbrirTelaCadastro = new Intent(MainActivity.this, CadastroActivity.class);
+                startActivity(intentAbrirTelaCadastro);
+            }
+        });
     }
 }

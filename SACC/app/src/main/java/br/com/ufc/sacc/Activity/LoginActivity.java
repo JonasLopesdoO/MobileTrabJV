@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import br.com.ufc.sacc.DAO.ConfiguracaoFirebase;
 import br.com.ufc.sacc.Model.Usuario;
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edtEmail;
     private EditText edtSenha;
     private Button btnLogar;
+    private TextView tvAbreCadastro;
 
     private FirebaseAuth autenticacao;
     private Usuario usuario;
@@ -33,6 +35,10 @@ public class LoginActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         edtSenha = findViewById(R.id.edtSenha);
         btnLogar = findViewById(R.id.btnLogar);
+        tvAbreCadastro = findViewById(R.id.tvAbreCadastro);
+
+        Toast.makeText(LoginActivity.this, "Digite os dados de login", Toast.LENGTH_SHORT).show();
+
 
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,9 +50,14 @@ public class LoginActivity extends AppCompatActivity {
                     usuario.setEmail(edtEmail.getText().toString());
                     usuario.setSenha(edtSenha.getText().toString());
                     validarLogin();
-                }else{
-
                 }
+            }
+        });
+
+        tvAbreCadastro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                abrirTelaCadastroUsuario();
             }
         });
     }
@@ -57,18 +68,23 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    abrirTelaPrincipal();
                     Toast.makeText(LoginActivity.this, "Login efetuado. Bem vindo ao SACCS", Toast.LENGTH_SHORT).show();
+                    abrirTelaPrincipal();
                 }
             }
         });
     }
 
     private boolean validarCampos(String email, String senha){
-        if(email == "" || email == null){
+        if((email == "" || email == null || email.equals("")) && (senha == "" || senha == null || senha.equals(""))){
+            Toast.makeText(LoginActivity.this, "Digite o email e a senha para prosseguir", Toast.LENGTH_SHORT).show();
+            return false;
+
+        }else if(email == "" || email == null || email.equals("")){
             Toast.makeText(LoginActivity.this, "Digite o email para prosseguir", Toast.LENGTH_SHORT).show();
             return false;
-        }else if(senha == "" || senha == null){
+
+        }else if(senha == "" || senha == null || senha.equals("")){
             Toast.makeText(LoginActivity.this, "Digite a senha para prosseguir", Toast.LENGTH_SHORT).show();
             return false;
         }
@@ -78,5 +94,10 @@ public class LoginActivity extends AppCompatActivity {
     private void abrirTelaPrincipal(){
         Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
         startActivity(intentAbrirTelaPrincipal);
+    }
+
+    public void abrirTelaCadastroUsuario(){
+        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+        startActivity(intent);
     }
 }

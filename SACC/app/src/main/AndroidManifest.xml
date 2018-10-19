@@ -22,6 +22,8 @@
         </activity>
         <activity android:name=".Activity.PrincipalActivity">
         </activity>
+        <activity android:name=".Activity.CadastroActivity">
+        </activity>
     </application>
 
 </manifest>
