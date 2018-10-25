@@ -93,7 +93,9 @@ public class LoginActivity extends AppCompatActivity {
 
     private void abrirTelaPrincipal(){
         Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
+        intentAbrirTelaPrincipal.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentAbrirTelaPrincipal);
+        finish();
     }
 
     public void abrirTelaCadastroUsuario(){
