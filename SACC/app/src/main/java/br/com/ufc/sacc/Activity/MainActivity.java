@@ -24,9 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentAbrirTelaLogin = new Intent(MainActivity.this, LoginActivity.class);
-                //intentAbrirTelaLogin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intentAbrirTelaLogin);
-                //finish();
+
             }
         });
 

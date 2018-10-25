@@ -98,9 +98,6 @@ public class LoginActivity extends AppCompatActivity {
         //finish();
     }
 
-    //public void onBackPressed() {
-      //  this.moveTaskToBack(true);
-    //}
 
     public void abrirTelaCadastroUsuario(){
         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
