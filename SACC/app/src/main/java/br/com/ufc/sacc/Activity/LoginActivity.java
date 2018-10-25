@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 if(validarCampos(edtEmail.getText().toString(), edtSenha.getText().toString())){
 
                     usuario = new Usuario();
@@ -93,10 +92,15 @@ public class LoginActivity extends AppCompatActivity {
 
     private void abrirTelaPrincipal(){
         Intent intentAbrirTelaPrincipal = new Intent(LoginActivity.this, PrincipalActivity.class);
-        intentAbrirTelaPrincipal.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        //intentAbrirTelaPrincipal.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intentAbrirTelaPrincipal);
-        finish();
+        onBackPressed();
+        //finish();
     }
+
+    //public void onBackPressed() {
+      //  this.moveTaskToBack(true);
+    //}
 
     public void abrirTelaCadastroUsuario(){
         Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
