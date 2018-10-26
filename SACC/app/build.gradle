@@ -18,6 +18,17 @@ android {
     }
 }
 
+//buildscript {
+    repositories {
+       mavenCentral()
+    }
+//}
+
+//se não ser certo isso de baixo tenta o que tá em cima comentado, e se não der certo o de cima, tenta a mesma coisa lá no outro graddle
+
+
+
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     //noinspection GradleCompatible
@@ -33,6 +44,8 @@ dependencies {
 
     implementation 'com.android.support:design:28.0.0'
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
+
+    implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
 }
 
 apply plugin: 'com.google.gms.google-services'
