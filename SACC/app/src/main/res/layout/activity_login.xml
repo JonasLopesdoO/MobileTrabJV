@@ -39,6 +39,11 @@
             android:layout_height="wrap_content"
             android:text="LOGIN COM FACEBOOK"/>
 
+        <com.google.android.gms.common.SignInButton
+                android:id="@+id/btnLogarGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
