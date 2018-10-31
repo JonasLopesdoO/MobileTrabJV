@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import br.com.ufc.sacc.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -37,4 +38,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onResume() {
+        if(getIntent().getBooleanExtra("SAIR", false)){
+            finish();
+            Toast.makeText(this, "Você acabou de deslogar", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
+        super.onResume();
+    }
+
 }
