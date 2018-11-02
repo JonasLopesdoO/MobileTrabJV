@@ -18,6 +18,8 @@ public class PrincipalActivity extends AppCompatActivity {
 
         btnLogout = findViewById(R.id.btnLogout);
 
+
+        //comentario
         //fechar tudo ao deslogar
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
