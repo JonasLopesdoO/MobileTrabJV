@@ -22,7 +22,7 @@ public class PrincipalActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
 
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer) ;
+        mDrawerLayout = findViewById(R.id.drawer) ;
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
