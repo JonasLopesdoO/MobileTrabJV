@@ -48,6 +48,12 @@
         </activity>
         <activity android:name=".Activity.PerfilActivity">
         </activity>
+        <activity android:name=".Activity.MensagemActivity">
+        </activity>
+        <activity android:name=".Activity.FaqActivity">
+        </activity>
+        <activity android:name=".Activity.ComoChegarActivity">
+        </activity>
     </application>
 
 </manifest>
