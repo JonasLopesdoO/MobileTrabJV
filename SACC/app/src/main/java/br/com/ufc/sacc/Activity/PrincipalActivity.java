@@ -29,8 +29,6 @@ public class PrincipalActivity extends AppCompatActivity {
 
         btnLogout = findViewById(R.id.btnLogout);
 
-
-
         //fechar tudo ao deslogar
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,10 +39,7 @@ public class PrincipalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
-
-
 
     public boolean onOptionsItemSelected(MenuItem item){
         if (mToggle.onOptionsItemSelected(item)){
@@ -70,7 +65,7 @@ public class PrincipalActivity extends AppCompatActivity {
             startActivity(intentComoChegar);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer);
+        DrawerLayout drawer = findViewById(R.id.drawer);
         drawer.closeDrawer(GravityCompat.START);
 
         return true;
