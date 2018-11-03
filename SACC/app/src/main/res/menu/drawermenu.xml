@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/perfil" android:title="Perfil"
+      android:icon="@drawable/ic_menu_perfil"/>
+<item android:id="@+id/mensagem" android:title="Mansagem"
+      android:icon="@drawable/ic_menu_mensagem"/>
+<item android:id="@+id/faq" android:title="FAQ"
+      android:icon="@drawable/ic_menu_faq"/>
+<item android:id="@+id/como_chegar" android:title="Como Chegar"
+      android:icon="@drawable/ic_menu_como_chegar"/>
+</menu>
