@@ -51,6 +51,7 @@ public class CadastroActivity extends AppCompatActivity {
         btnGravar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //criar um método pra colocar dentro do if ao inves dessas isntruções
                 if(confirmaSenha(edtCadSenha.getText().toString(), edtCadConfirmaSenha.getText().toString())){
                     usuario = new Usuario();
                     usuario.setNome(edtCadNome.getText().toString());
@@ -64,7 +65,6 @@ public class CadastroActivity extends AppCompatActivity {
                 }else{
                     Toast.makeText(CadastroActivity.this, "As senhas não correspondem", Toast.LENGTH_SHORT).show();
                 }
-
             }
         });
     }
@@ -92,7 +92,6 @@ public class CadastroActivity extends AppCompatActivity {
 
                 }else{
                     String erroExcecao = "";
-
                     try{
                         throw task.getException();
                     }catch (FirebaseAuthWeakPasswordException e){
