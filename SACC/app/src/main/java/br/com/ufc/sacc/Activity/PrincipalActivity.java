@@ -19,11 +19,15 @@ import android.widget.Toast;
 public class PrincipalActivity extends AppCompatActivity {
 
     Button btnLogout;
+    private Toolbar toolbar;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
 
         btnLogout = findViewById(R.id.btnLogout);
 
@@ -39,7 +43,63 @@ public class PrincipalActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
+        drawerLayout.addDrawerListener(toggle);
+
+        toggle.syncState();
+
     }
+
+    public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+            navigationView = (NavigationView) findViewById(R.id.navView);
+            navigationView.setNavigationItemSelectedListener(this);
+        }
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            switch (item.getItemId()) {
+                case R.id.nav_item_perfil: {
+                    Toast.makeText(this, "Perfil", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.nav_item_consultas: {
+                    Toast.makeText(this, "Consulta", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.nav_item_mensagem: {
+                    Toast.makeText(this, "Chat", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.nav_item_faq: {
+                    Toast.makeText(this, "Perguntas frequentes", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+                case R.id.nav_item_como_chegar: {
+                    Toast.makeText(this, "Mapa", Toast.LENGTH_SHORT).show();
+                    break;
+                }
+            }
+
+            drawerLayout.closeDrawer(GravityCompat.START);
+
+            return true;
+        }
+    }
+
+
 
     @Override
     public void onBackPressed() {
