@@ -28,8 +28,11 @@ public class PrincipalActivity extends AppCompatActivity {
         mToggle.syncState();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         btnLogout = findViewById(R.id.btnLogout);
 
+=======
+>>>>>>> parent of b4bd729... Login com conta do Google funcionando
 =======
 >>>>>>> parent of b4bd729... Login com conta do Google funcionando
         //comentario
