@@ -27,14 +27,10 @@ public class PrincipalActivity extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         btnLogout = findViewById(R.id.btnLogout);
 
-=======
->>>>>>> parent of b4bd729... Login com conta do Google funcionando
-=======
->>>>>>> parent of b4bd729... Login com conta do Google funcionando
+
         //comentario
         //fechar tudo ao deslogar
         btnLogout.setOnClickListener(new View.OnClickListener() {
